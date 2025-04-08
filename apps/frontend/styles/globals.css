@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles for light/dark mode */
+@layer base {
+  /* Default light mode variables */
+  :root {
+    --foreground: 23, 23, 23;
+    --background: 255, 255, 255;
+    color-scheme: light;
+  }
+
+  /* Dark mode variables using media query */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground: 237, 237, 237;
+      --background: 23, 23, 23;
+      color-scheme: dark;
+    }
+  }
+  
+  /* Apply variables to body */
+  body {
+    color: rgb(var(--foreground));
+    background: rgb(var(--background));
+  }
+}
+
+/* Your custom styles below */
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  
+  .animation-delay-700 {
+    animation-delay: 700ms;
+  }
+  
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  
+  .animation-delay-1500 {
+    animation-delay: 1.5s;
+  }
+  
+  /* Add any other animation delays you're using */
+}
+
+.animate-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s;
+}
+
+.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* This class is redundant since you have the animation defined in tailwind.config.js */
+/* Instead, use the tailwind class 'animate-chart-bar' directly */
+.animate-chart-bar {
+  animation: chart-bar 1s ease-out forwards;
+}
