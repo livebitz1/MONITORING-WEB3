@@ -4,14 +4,16 @@
   "type": "module",
   "private": true,
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/jsonwebtoken": "^9.0.9"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
     "@types/express": "^5.0.1",
+    "db": "*",
     "express": "^5.1.0",
-    "db": "*"
+    "jsonwebtoken": "^9.0.2"
   }
 }

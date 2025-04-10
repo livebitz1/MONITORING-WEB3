@@ -388,7 +388,9 @@ export default function UptimeLanding() {
         <main className="relative">
           {/* Hero Section */}
           <section
-            ref={(el) => (sectionsRef.current[0] = el)}
+            ref={(el) => {
+              sectionsRef.current[0] = el
+            }}
             className="relative min-h-[90vh] flex items-center py-32 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden animate-section"
             style={{
               perspective: "1000px",
@@ -474,7 +476,9 @@ export default function UptimeLanding() {
 
           {/* How It Works Section */}
           <section
-            ref={(el) => (sectionsRef.current[1] = el)}
+            ref={(el) => {
+              sectionsRef.current[1] = el
+            }}
             className="py-20 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto animate-section"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 section-title">
@@ -521,7 +525,9 @@ export default function UptimeLanding() {
 
           {/* Features Section */}
           <section
-            ref={(el) => (sectionsRef.current[2] = el)}
+            ref={(el) => {
+              sectionsRef.current[2] = el
+            }}
             className="py-20 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto animate-section"
           >
             <div
@@ -588,7 +594,9 @@ export default function UptimeLanding() {
 
           {/* Testimonials Section */}
           <section
-            ref={(el) => (sectionsRef.current[3] = el)}
+            ref={(el) => {
+              sectionsRef.current[3] = el
+            }}
             className="py-20 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto animate-section"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 section-title">
@@ -636,7 +644,9 @@ export default function UptimeLanding() {
 
           {/* FAQ Section */}
           <section
-            ref={(el) => (sectionsRef.current[4] = el)}
+            ref={(el) => {
+              sectionsRef.current[4] = el
+            }}
             className="py-20 px-4 md:px-6 lg:px-8 max-w-4xl mx-auto animate-section"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 section-title">
@@ -674,7 +684,9 @@ export default function UptimeLanding() {
 
           {/* Pricing Section */}
           <section
-            ref={(el) => (sectionsRef.current[5] = el)}
+            ref={(el) => {
+              sectionsRef.current[5] = el
+            }}
             className="py-20 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto animate-section"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 section-title">
@@ -770,7 +782,9 @@ export default function UptimeLanding() {
 
           {/* CTA Section */}
           <section
-            ref={(el) => (sectionsRef.current[6] = el)}
+            ref={(el) => {
+              sectionsRef.current[6] = el
+            }}
             className="py-20 px-4 md:px-6 lg:px-8 max-w-5xl mx-auto text-center animate-section"
           >
             <div className="relative p-12 rounded-2xl border border-white/10 overflow-hidden cta-container">
@@ -815,7 +829,9 @@ export default function UptimeLanding() {
         {/* Footer */}
         <footer
           className="bg-black py-12 px-4 md:px-6 lg:px-8 border-t border-white/10"
-          ref={(el) => (sectionsRef.current[7] = el)}
+          ref={(el) => {
+            sectionsRef.current[7] = el
+          }}
         >
           <div
             className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 footer-content"

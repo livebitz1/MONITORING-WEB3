@@ -23,7 +23,7 @@ export function useWebsite() {
     try {
       const response = await axios.get(`${API_BACKEND_URL}/api/v1/websites`, {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: token,
         },
       });
       setWebsites(response.data);
