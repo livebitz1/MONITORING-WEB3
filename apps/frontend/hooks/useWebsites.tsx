@@ -14,7 +14,7 @@ interface Website {
   }[];
 }
 
-export function useWebsite() {
+export function useWebsites() {
   const { getToken } = useAuth();
   const [websites, setWebsites] = useState<Website[]>([]);
 
@@ -44,5 +44,5 @@ export function useWebsite() {
     };
   }, []);
 
-  return websites;
+  return { websites ,  refreshWebsites };
 }

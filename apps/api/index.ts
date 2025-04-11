@@ -1,6 +1,6 @@
 import express from 'express';
 import { authMiddleware } from './middleware';
-import { prismaClient } from '../../packages/db/src/index';
+import { prismaClient } from '../../packages/db/index';
 import cors from 'cors';
 const app = express();
 app.use(cors())
@@ -41,18 +41,39 @@ app.get('/api/v1/website/status', authMiddleware, async (req, res) => {
 })
 
 app.get('/api/v1/websites', authMiddleware, async (req, res) => {
-   const userId = req.userId!;
+  const userId = req.userId!;
 
-   const websites = await prismaClient.website.findMany({
-    where: {
-      userId,
-      disabled: false
-    }
+  try {
+    const websites = await prismaClient.website.findMany({
+      where: {
+        userId,
+        disabled: false
+      },
+      include: {
+        websiteTicks: true  // Changed from 'ticks' to 'websiteTicks' to match seed.ts
+      }
     });
+    
+    // Map to the format frontend expects
+    const mappedWebsites = websites.map(website => ({
+      ...website,
+      ticks: website.websiteTicks.map(tick => ({
+        createdAt: tick.createdAt,
+        status: tick.status
+      }))
+    }));
+    
     res.json({
-        websites,
-    })
-})
+      websites: mappedWebsites,
+    });
+  } catch (error) {
+    console.error("Error fetching websites:", error);
+    res.status(500).json({
+      message: "Failed to fetch websites",
+      error: error instanceof Error ? error.message : String(error)
+    });
+  }
+});
 
 app.delete('/api/v1/website/', authMiddleware, async (req, res) => {
  const websiteId = req.query.websiteId as string;

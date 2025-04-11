@@ -1,5 +1,5 @@
 
-import { prismaClient } from "../src";
+import { prismaClient } from "../src/client";
 
 const USER_ID = "4";
 
